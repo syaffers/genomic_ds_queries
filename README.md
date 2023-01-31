@@ -5,13 +5,13 @@ This repository contains the commands used to perform all the queries featured i
 ## Requirements
 
 - [BCFtools v1.13](https://github.com/samtools/bcftools)
-- [SnpSift v??](https://github.com/). Depends on:
+- [SnpSift v??](https://pcingola.github.io/SnpEff/). Depends on:
     - Java 1.8.0
-- [GEMINI](https://whatever.com). Depends on:
+- [GEMINI v0.??](https://gemini.readthedocs.io/en/latest/). Depends on:
     - Python 2.7.15
-- [Hail](https://hail.is/), which requires:
+- [Hail v0.2.??](https://hail.is/), which requires:
     - Python 3.7.12
-- [OpenCGA v2.1.0](https://opencb.org)
+- [OpenCGA v2.1.0](https://docs.opencga.opencb.org/)
 
 ## Scenario 1
 
