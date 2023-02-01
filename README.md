@@ -5,12 +5,13 @@ This repository contains the commands used to perform all the queries featured i
 ## Requirements
 
 - [BCFtools v1.13](https://github.com/samtools/bcftools)
-- [SnpSift v??](https://pcingola.github.io/SnpEff/). Depends on:
+- [SnpSift v5.0e](https://pcingola.github.io/SnpEff/). Depends on:
     - Java 1.8.0
-- [GEMINI v0.??](https://gemini.readthedocs.io/en/latest/). Depends on:
+- [GEMINI v0.20.1](https://gemini.readthedocs.io/en/latest/). Depends on:
     - Python 2.7.15
-- [Hail v0.2.??](https://hail.is/), which requires:
+- [Hail v0.2.105-acd89e80c345](https://hail.is/), which requires:
     - Python 3.7.12
+    - Apache Spark 3.1.3 (installed with Hail)
 - [OpenCGA v2.1.0](https://docs.opencga.opencb.org/)
 
 ## Scenario 1
@@ -75,11 +76,12 @@ The related files are:
 2. SnpSift
     - `scenario_4/run_snpsift.sh`.
 3. Hail
-    - (TBD)
-    - Hail annotation code.
+    - `run_prep_hail.py` to create Matrix Tables.
+    - `hail_query.py` to run the query in Hail.
+    - `run_hail.sh` to loop through files and
 4. Gemini
     - `scenario_4/sql_generator.py` for SQLite column generation.
     - `scenario_4/run_gemini.sh` for queries.
 5. OpenCGA
+    - `scenario_4/run_prep_opencga.sh`.
     - `scenario_4/run_opencga.sh`.
-    - should we include operations?
