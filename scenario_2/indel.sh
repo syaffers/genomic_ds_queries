@@ -5,7 +5,7 @@ filename='results_indel.txt'
 echo 'BCFtools' >> $filename
 for i in `seq 1 5`
 do
-    { time /media/shared/tools/bcftools-1.13/bcftools view -H -r chr5 -i 'TYPE="indel"' /media/shared/paper-queries/arab1k.vcf.bgz | head -10000 > /dev/null; } 2>&1 > /dev/null | cut -d '	' -f 2 | head -2 | tail -1 | ../utils/m2s.py >> $filename
+    { time bcftools view -H -r chr5 -i 'TYPE="indel"' /media/shared/paper-queries/arab1k.vcf.bgz | head -10000 > /dev/null; } 2>&1 > /dev/null | cut -d '	' -f 2 | head -2 | tail -1 | ../utils/m2s.py >> $filename
 done
 
 # GEMINI.
@@ -31,7 +31,7 @@ done
 echo 'SnpSift' >> $filename
 for i in `seq 1 5`
 do
-    { time java -jar /media/shared/tools/snpEff/SnpSift.jar filter "( (CHROM='chr5') & ( VARTYPE = 'DEL' | VARTYPE = 'INS' ) )" /media/shared/paper-queries/arab1k_filtered.vcf | head -10232 > /dev/null; } 2>&1 > /dev/null | tail -3 | cut -d '	' -f 2 | head -1 | ../utils/m2s.py >> $filename
+    { time SnpSift filter "( (CHROM='chr5') & ( VARTYPE = 'DEL' | VARTYPE = 'INS' ) )" /media/shared/paper-queries/arab1k_filtered.vcf | head -10232 > /dev/null; } 2>&1 > /dev/null | tail -3 | cut -d '	' -f 2 | head -1 | ../utils/m2s.py >> $filename
 done
 
 # OpenCGA.

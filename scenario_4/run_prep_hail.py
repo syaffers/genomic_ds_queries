@@ -3,7 +3,7 @@ import hail as hl
 
 hl.init()
 
-for i in range(10,101,10):
+for i in range(10, 101, 10):
     vcf = hl.import_vcf(f'VCFs/ukb_cs_{i}k.vcf.gz', force_bgz=True, reference_genome='GRCh37')
     vcf.write(f'MTs/ukb_cs_{i}k.mt', overwrite=True)
 

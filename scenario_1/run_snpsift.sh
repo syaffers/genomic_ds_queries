@@ -11,7 +11,7 @@ do
     echo $rs >> $filename
 
     # Query and write query time into file.
-    { time java -jar /media/shared/tools/snpEff/SnpSift.jar filter "( ID = '$rs' )" /media/shared/paper-queries/arab1k.vcf > /dev/null; } 2>&1 > /dev/null | tail -3 | cut -d '	' -f 2 | head -2 | tail -1 | ../utils/m2s.py >> $filename
+    { time SnpSift filter "( ID = '$rs' )" /media/shared/paper-queries/arab1k.vcf > /dev/null; } 2>&1 > /dev/null | tail -3 | cut -d '	' -f 2 | head -2 | tail -1 | ../utils/m2s.py >> $filename
 
     # Reset so that terminal works as usual again.
     IFS='	'

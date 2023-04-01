@@ -2,6 +2,7 @@
 
 This repository contains the commands used to perform all the queries featured in the paper.
 
+
 ## Requirements
 
 - [BCFtools v1.13](https://github.com/samtools/bcftools)
@@ -13,6 +14,26 @@ This repository contains the commands used to perform all the queries featured i
     - Python 3.7.12
     - Apache Spark 3.1.3 (installed with Hail)
 - [OpenCGA v2.1.0](https://docs.opencga.opencb.org/)
+
+
+### Docker image
+
+We have provided a `Dockerfile` which can be built as follows:
+
+```bash
+docker build -t gdsq:latest .
+```
+
+Building the Docker image can take some time, depending on connection speed and CPU.  We found that it took around 25 minutes to build the Docker image.
+
+To run the image:
+
+```bash
+docker run --rm -it gdsq:latest
+```
+
+All tools are available *except OpenCGA* as it requires some additional setup that makes it impossible to include in a Docker container. The container starts in the `py3` environment so Hail can be run along with other tools. GEMINI is installed in the `py2` environment but can be used even from the `py3` environment thanks to its alias.
+
 
 ## Scenario 1
 
@@ -40,6 +61,7 @@ The related files are:
         - `run_opencga.sh`
         - `run_opencga_wchr.sh`
 
+
 ## Scenario 2
 
 The query statement is
@@ -51,6 +73,7 @@ The related files are:
 - `indel.sh`
 - `hail_run_indel.py`
 
+
 ## Scenario 3
 
 The query statement is
@@ -61,6 +84,7 @@ The related files are:
 
 - `HOM.sh`
 - `hail_run_HOM.py`
+
 
 ## Scenario 4
 

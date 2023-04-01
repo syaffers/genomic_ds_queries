@@ -12,7 +12,7 @@ do
     echo $rs >> $filename
 
     # Query and write query time into file.
-    { time /media/shared/tools/bcftools-1.13/bcftools view -i "%ID=@snp" /media/shared/paper-queries/arab1k.vcf.bgz > /dev/null; } 2>&1 > /dev/null | cut -d '	' -f 2 | head -2 | tail -1 | ../utils/m2s.py >> $filename
+    { time bcftools view -i "%ID=@snp" /media/shared/paper-queries/arab1k.vcf.bgz > /dev/null; } 2>&1 > /dev/null | cut -d '	' -f 2 | head -2 | tail -1 | ../utils/m2s.py >> $filename
 
     # Reset so that terminal works as usual again.
     IFS='	'
